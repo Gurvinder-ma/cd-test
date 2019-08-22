@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    PROJECT = "REPLACE_WITH_YOUR_PROJECT_ID"
+    PROJECT = "cool-academy-241307"
     APP_NAME = "gceme"
     FE_SVC_NAME = "${APP_NAME}-frontend"
     CLUSTER = "jenkins-cd"
@@ -109,3 +109,8 @@ spec:
     }
   }
 }
+
+def project = 'cool-academy-241307'
+def appName = 'gceme'
+def feSvcName = "${appName}-frontend"
+def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
